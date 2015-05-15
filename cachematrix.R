@@ -4,7 +4,13 @@
 # The second works with those functions passed to it to return the 
 # inverse of the original matrix or the cached inverse if that already exists.
 
-
+# Typical use:
+# Run the code for both functions, then
+# create a matrix:   my_matrix <- matrix(c(10,20,30,40),2,2)
+#                    z <- makeCacheMatrix(my_matrix)
+#                    cacheSolve(z)   #this will then print the inverse indicating it's 'initial'
+#                    cacheSolve(z)   #this will print the inverse again indicating it's 'cached'
+# 
 
 # Function description:
 # 'set' is used to initialize x to the matrix
@@ -38,7 +44,7 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inv <- x$getinv()
   if(!is.null(inv)) {
-    message("getting cached inveerse")
+    message("getting cached inverse")
     return(inv)
   }
   data <- x$get()
